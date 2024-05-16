@@ -1,18 +1,17 @@
 
 
-function clickHandler(event) {
-    console.log(event.target)
-    const currentBtn = event.target;
-    currentBtn.disabled= true;
+document.addEventListener('click', clickHandler);
+document.body.addEventListener('click',clickHandler);
 
-    currentBtn.removeEventListener('click', clickHandler);
-}
+const parent = document.querySelector('#parent');
+parent.addEventListener('click',clickHandler,true);
+
+const btn = document.querySelector('button');
+btn.addEventListener('click',clickHandler);
 
 
-const btnCollection = document.querySelectorAll('button');
-
-for (const btn of btnCollection) {
-    btn.addEventListener('click', clickHandler);
-    
+function clickHandler(event){
+    console.dir(event.currentTarget)
+    event.stopPropagation();
 }
 
