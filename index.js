@@ -1,8 +1,10 @@
 
+const div = document.querySelector('div');
 
-const form = document.querySelector('form');
-
-form.addEventListener('submit',(event)=>{
-    event.preventDefault();
-    console.log(event)
+div.addEventListener('click',(event)=>{
+    console.log(event.clientX,event.clientY);
+    const section = document.querySelector('#coordinats');
+    section.innerText = `X: ${event.clientX} \n Y:${event.clientY}`
 })
+
+
