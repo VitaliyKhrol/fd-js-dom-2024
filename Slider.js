@@ -1,12 +1,12 @@
 
 class Slider{
-    constructor(imageArray,index = 0){
-        this._images = imageArray;
+    constructor(userArray,index = 0){
+        this._users = userArray;
         this._currentIndex = index;
     }
 
     get currentSlide(){
-        return this._images[this._currentIndex];
+        return this._users[this._currentIndex];
     }
 
     set currentIndex(value){
@@ -21,12 +21,11 @@ class Slider{
     }
 
     get prev(){
-              return ((this._currentIndex-1 + this._images.length) % this._images.length)
-    }
+              return ((this._currentIndex-1 + this._users.length) % this._users.length);
 
-    
+    }
     get next(){
-        return ((this._currentIndex+1) % this._images.length)
+        return ((this._currentIndex+1 )% this._users.length);
     }
 
 }
