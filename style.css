@@ -1,10 +1,22 @@
 body {
     margin: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: beige;
    
 }
 
-img{
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+.wrapper{
+    width: 200px;
+    background-color: aquamarine;
+    border: 2px solid salmon;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
 }

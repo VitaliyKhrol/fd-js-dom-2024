@@ -11,13 +11,29 @@
 </head>
 
 <body>
-    <section>
-       <img src="" class="img">
-       <button data-src ="./images/pexels-michael-block-1691617-3225517.jpg">1</button>
-       <button data-src="./images/pexels-pixabay-236599.jpg">2</button>
-       <button data-src="./images/pexels-roshan-kamath-793618-1661179.jpg">3</button>
-
-    </section>
+    <section class="wrapper">
+    <form>
+        <input name="amount" type="text" placeholder="Number">
+        <label>
+        <select id="currencyInput">
+            <option>USD</option>
+            <option>EUR</option>
+            <option>PLN</option>
+            <option>UAN</option>
+        </select>
+        <select id="currencyOutput">
+            <option>UAN</option>
+            <option>USD</option>
+            <option>EUR</option>
+            <option>PLN</option>
+        </select>
+    </label>
+        <input type="submit" value="Submit" />
+    </form>
+    <article id="resultField">
+        0
+    </article>  
+</section>
 </body>
 
 </html>
