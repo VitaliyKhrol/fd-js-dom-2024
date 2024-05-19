@@ -1,38 +1,20 @@
 
-
-// const root  = document.querySelector('#root');
-// const toggler  = document.createElement('button');
-// toggler.textContent = 'Switch';
-// document.body.append(toggler);
-
-
-// const lamp =document.createElement('div');
-// lamp.classList.add('lamp-off');
-
-// root.append(lamp)
-
-
-
-// toggler.addEventListener('click',toggle)
-
-// function toggle(){
-//     lamp.classList.toggle('lamp-off');
-//     lamp.classList.toggle('lamp-on');
-//     console.log(lamp.classList);
-// }
-
-
-
 const root  = document.querySelector('#root');
-
-const article =document.createElement('article');
-const h1 = document.createElement('h1');
-const p = document.createElement('p');
-
-
-h1.textContent='Header';
-p.textContent= 'TEXT';
+const array =[
+    './images/pexels-iriser-1381679.jpg',
+    './images/pexels-michael-block-1691617-3225517.jpg',
+    './images/pexels-pixabay-53125.jpg',
+    './images/pexels-pixabay-236599.jpg'
+]
 
 
-article.append(h1,p)
-root.append(article)
+function createImage(imgScr){
+const img = document.createElement('img');
+img.setAttribute('src',imgScr);
+img.classList.add('img')
+return img;
+}
+
+const imageArray = array.map(createImage)
+
+root.append(...imageArray )
