@@ -5,26 +5,19 @@ const cardArray = userData.map(user => createUserCard(user));
 
 
 function createUserCard(user) {
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('card-wrapper');
-
     const img = document.createElement('img');
     img.classList.add('avatar');
     img.setAttribute('src', user.profilePicture);
     img.setAttribute('alt', user.name)
 
-    const h2 = document.createElement('h2');
-    h2.append(user.name);
+   
+    const h2= crElement('h2',{}, user.name);
+    const p =crElement('p',{},user.description);
+    const button = crElement('button',{},'Continue')
+    
+    const wrapper = crElement('div', {classNames: ['card-wrapper']},img, h2, p, button )
 
-    const p = document.createElement('p');
-    p.append(user.description);
-
-    const button = document.createElement('button');
-    button.append('Content')
-
-    wrapper.append(img, h2, p, button);
-
-    wrapper.addEventListener('click', getActiveCard);
+        wrapper.addEventListener('click', getActiveCard);
 
     return wrapper;
 }
@@ -44,5 +37,27 @@ function getActiveCard(event) {
     event.curentTarget.classList.add('active')
 }
 
+/**
+ * 
+ * @param {String} type 
+ * @param {Object} option 
+ * @param {String[]} option.classNames
+ * @param  {Node} children 
+ * @returns 
+ */
+
+
+
+function crElement(type,{classNames=[]}, ...children){
+
+    console.log(type);
+    console.log(classNames)
+    console.log(children)
+
+    const elem = document.createElement(type);
+    elem.classList.add(...classNames);
+    elem.append(...children);
+    return elem;
+}
 
 root.append(...cardArray)
